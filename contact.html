@@ -49,32 +49,24 @@
     <div class="contact">
       <form onsubmit="sendEmail(); reset(); return false;">
         <h3>Contact Me</h3>
-        <input type="text" id="name" placeholder="Enter your name" required>
-        <input type="email" id="email" placeholder="Enter your email" required>
-        <input type="text" id="phone" placeholder="Enter your phone" required>
+        <!---input type="text" id="name" placeholder="Enter your name" required---->
+        <!---input type="email" id="email" placeholder="Enter your email" required---->
+        <input type="text" id="subject" placeholder="Enter your subject" required>
         <textarea id="message" rows="4" placeholder="Write your message"></textarea>
         <button type="submit">Send</button>
       </form>
 
       </div>
-      <script scr="https://smtpjs.com/v3/smtp.js"></script>
       <script>
-        function sendEmail(){
-          Email.send({
-            Host : "smtp.gmail.com",
-            Username : "pommcakes2005@gmail.com",
-            Password : "#####",
-            To : 'lli1921452422@gmail.com',
-            From : document.getElementById("email").value,
-            Subject : "New Contact Form",
-            Body : "Name: " + document.getElementById("name").value
-                + "<br> Email: " + document.getElementById("email").value
-                + "<br> Phone: " + document.getElementById("phone").value
-                + "<br> Message: " + document.getElementById("message").value
-          }).then(
-          message => alert("Message Sent Successfully")
-          );
+        document.querySelector('form').addEventListener('submit',
+        function(event)
+        {
+          var subject = document.querySelector('#subject').value;
+          var message = document.querySelector('#message').value;
+          window.open("mailto:lli1921452422@gmail.com?subject=" + subject + "&body=" + message, '_blank');
+
         }
+        )
       </script>
     </body>
 </html>
