@@ -142,3 +142,20 @@ form button{
     margin: 20px auto 0;
     border-radius: 30px;
 }
+
+/*-----------------Writeup Page-------------*/
+.second-title
+{
+    font-size: 25px;
+    font-weight: 500;
+}
+#circle
+{
+    background: beige;
+    display: flex;
+    flex-direction: column;
+    padding: 2vw 4vw;
+    width: 90%;
+    max-width: 200;
+    border-radius: 30px;
+}
