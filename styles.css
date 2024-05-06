@@ -41,7 +41,7 @@
 {
     background-image: linear-gradient(to right, #d9d2e9, #6fa8dc);
     color: #000;
-    padding-top: 5%
+    padding-top: 5%;
 }
 .promote-title
 {
@@ -151,11 +151,31 @@ form button{
 }
 #circle
 {
+    margin: 20px;
     background: beige;
     display: flex;
     flex-direction: column;
     padding: 2vw 4vw;
-    width: 90%;
+    width: 95%;
     max-width: 200;
     border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+
+}
+.big-title
+{
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 50;
+    text-align: center;
+}
+
+#writeup
+{
+    background-image: linear-gradient(to right, #d9d2e9, #6fa8dc);
+    color: #000;
+    padding-top: 5%;
+    margin: 0 auto;
+
 }
