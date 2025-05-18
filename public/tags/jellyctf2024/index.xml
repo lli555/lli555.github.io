@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JellyCTF2024 on </title>
+    <link>http://localhost:1313/tags/jellyctf2024/</link>
+    <description>Recent content in JellyCTF2024 on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 25 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/jellyctf2024/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>jellyCTF 2024 - aidoru</title>
+      <link>http://localhost:1313/posts/jellyctf/aidoru/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/jellyctf/aidoru/</guid>
+      <description>&lt;p&gt;Description of challenge:&#xA;There&amp;rsquo;s a hidden flag on Jelly&amp;rsquo;s page, but the creator hasn&amp;rsquo;t made her page public yet. Can you find a way to access her page and capture the flag?&lt;/p&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;From the initial inspection, it seemed that the access to one of the Virtual Youtubers&amp;rsquo; page was restricted when clicking on her picture. However, there existed a broken access control vulnerability that allowed direct access to the web page by simply changing the url to an endpoint.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>jellyCTF 2024 - awafy_me</title>
+      <link>http://localhost:1313/posts/jellyctf/awafy/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/jellyctf/awafy/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;The setting of this web page was a custom name converter that converted a user input into &amp;ldquo;AWASCII&amp;rdquo;. Due to improper user input sanitization, a command injection vulnerability present in the application allowed execution of arbitrary command code.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;When I first opened up the web page, I noticed that there was a place for user input. I examined the source code &lt;code&gt;main.py&lt;/code&gt; and found that the flask application was using python&amp;rsquo;s subprocess module to start the python script &lt;code&gt;awafier.py&lt;/code&gt; that took the user input as an argument. After checking the documentation of the python module, it appeared that the library will not implicitly choose to call a system shell unless it&amp;rsquo;s invoked via &lt;code&gt;shell=True&lt;/code&gt;. In this challenge, this was invoked explicitly as shown in the screenshot of the source code.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>jellyCTF 2024 - bro_visited_his_site</title>
+      <link>http://localhost:1313/posts/jellyctf/bro/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/jellyctf/bro/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;This was a good beginner challenge that involved a Server-Side Template Injection vulnerability in the Flask application&amp;rsquo;s Jinja2 template engine. This vulnerability allowed access to read the contents of the applicatoin&amp;rsquo;s config object, which was where the flag for this challenge was located.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;When I first opened up the web page, I was presented with a form input. I tested the level of input sanitization with a mathematical expression in double curly braces:  &lt;code&gt;{{2*2}}&lt;/code&gt;, which prints the contents in between to the template output. To better see the response from the browser, I sent my request using &lt;code&gt;Burpsuite&lt;/code&gt; and got a positive indication of a Server-Side Template Injection vulnerability.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>jellyCTF 2024 - bro_visited_his_site_2</title>
+      <link>http://localhost:1313/posts/jellyctf/bro_2/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/jellyctf/bro_2/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;This was the second part of the same application, which also involved the Server-Side Template Injection Vulnerability. However, this time the flag was in the file &lt;code&gt;flag.txt&lt;/code&gt; in the application directory, which can be accessed through remote code execution using the request object.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;To achieve remote code execution, the goal was to import the &lt;code&gt;os&lt;/code&gt; module, which can be found in request&amp;rsquo;s &lt;code&gt;__builtins__&lt;/code&gt; method via the &lt;code&gt;__globals__&lt;/code&gt; attribute.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

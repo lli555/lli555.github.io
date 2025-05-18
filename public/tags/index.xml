@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on </title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Author</title>
+      <link>http://localhost:1313/tags/author/</link>
+      <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/author/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web</title>
+      <link>http://localhost:1313/tags/web/</link>
+      <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ImagineCTF2024</title>
+      <link>http://localhost:1313/tags/imaginectf2024/</link>
+      <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/imaginectf2024/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Writeups</title>
+      <link>http://localhost:1313/tags/writeups/</link>
+      <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/writeups/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>UMDCTF2024</title>
+      <link>http://localhost:1313/tags/umdctf2024/</link>
+      <pubDate>Sat, 21 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/umdctf2024/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>BYUCTF2024</title>
+      <link>http://localhost:1313/tags/byuctf2024/</link>
+      <pubDate>Thu, 15 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/byuctf2024/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>L3akCTF2024</title>
+      <link>http://localhost:1313/tags/l3akctf2024/</link>
+      <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/l3akctf2024/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JellyCTF2024</title>
+      <link>http://localhost:1313/tags/jellyctf2024/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/jellyctf2024/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Author on </title>
+    <link>http://localhost:1313/tags/author/</link>
+    <description>Recent content in Author on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/author/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UMassCTF 2025 - Falling Blocks</title>
+      <link>http://localhost:1313/posts/umassctf2025/</link>
+      <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/umassctf2025/</guid>
+      <description>&lt;p&gt;This is my second time being an author and organizer for UMassCTF. Since this year&amp;rsquo;s theme was flash/io games, it was a great opportunity for me to incorporate web game elements. So I decided to create a web challenge using WebSockets themed on the &amp;ldquo;Falling Blocks&amp;rdquo; game where the player has to dodge the falling blocks and the longer you survive the higher score you&amp;rsquo;ll get. The vulnerability itself wasn&amp;rsquo;t hard to find and exploit, but I aimed to make it subtle and more real-life-like.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>UMassCTF 2024 - Holesome Birthday Party</title>
+      <link>http://localhost:1313/posts/umassctf2024/</link>
+      <pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/umassctf2024/</guid>
+      <description>&lt;p&gt;This is my first time being a CTF author and organizer for UMassCTF. I decided to make a beginner challenge that teaches basic skills in web exploitation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-description&#34;&gt;Challenge Description&lt;/h2&gt;&#xA;&lt;p&gt;You just got invited to Spongebob&amp;rsquo;s birthday! But he&amp;rsquo;s decided to test your friendship with a series of challenges before granting you with the ticket of entrance. Can you prove that you&amp;rsquo;re truly his friend and earn your entrance to this holesome birthday party?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

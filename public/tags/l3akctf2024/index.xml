@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>L3akCTF2024 on </title>
+    <link>http://localhost:1313/tags/l3akctf2024/</link>
+    <description>Recent content in L3akCTF2024 on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/l3akctf2024/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>L3akCTF 2024 - I&#39;m the CEO</title>
+      <link>http://localhost:1313/posts/l3akctf2024/ceo/</link>
+      <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/l3akctf2024/ceo/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;This was an easy web challenge that involved a XSS(Cross-site scripting) attack. The set up was a web application that allowed users to register an account to log in and post notes. Additionally, there was an admin bot page in which the admin bot would visit the page url we gave it. Looking through the source code, I found that the flag was set as the cookie of the admin bot. So the goal was to craft a XSS attack to steal its cookie.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>L3akCTF 2024 - Simple Calculator</title>
+      <link>http://localhost:1313/posts/l3akctf2024/simple/</link>
+      <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/l3akctf2024/simple/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;The set up of this challenge was a simple calculator that allowed users to perform easy calculations, such as subtraction and multiplication, through the &lt;code&gt;formula&lt;/code&gt; url parameter. It had a command injection vulnerability that allowed attackers to inject arbitrary commands on the host system to extract sensitive information.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;There was nothing much interesting in the frontend of the web page, so I turned to the source code and found the vulnerability immediately. The web application was using &lt;code&gt;eval()&lt;/code&gt; to take in user input as a string and then executing it through &lt;code&gt;echo&lt;/code&gt;. Whenever &lt;code&gt;eval()&lt;/code&gt; is used in an application to take in an input it should always set off an alarm. There are numerous articles online explaining the danger of &lt;code&gt;eval()&lt;/code&gt;. In this case, even though the author used a seemingly secure way, regular expression, to sanitize the user input before passing it into &lt;code&gt;eval()&lt;/code&gt;, there were still ways to bypass the filter. Here is a screenshot of the source code:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

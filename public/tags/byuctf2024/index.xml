@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BYUCTF2024 on </title>
+    <link>http://localhost:1313/tags/byuctf2024/</link>
+    <description>Recent content in BYUCTF2024 on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/byuctf2024/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BYUCTF 2024 - Random</title>
+      <link>http://localhost:1313/posts/byuctf2024/</link>
+      <pubDate>Thu, 15 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/byuctf2024/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Overall this was a pretty fun challenge, I enjoyed it a lot. It came off as easy at first, but tricked me in a few places. This challenge can be broken down into two major stages: figure out how to get the same secret key to sign a session cookie and how to get the file &lt;code&gt;flag.txt&lt;/code&gt; from the &lt;code&gt;filename&lt;/code&gt; url parameter.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;When I first opened up the web page, I got a 403 error. So I inspected the source code provided and found that the server is checking for a key value pair&lt;code&gt;{userid: 0}&lt;/code&gt; in the session cookie.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

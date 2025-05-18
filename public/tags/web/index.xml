@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on </title>
+    <link>http://localhost:1313/tags/web/</link>
+    <description>Recent content in Web on </description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 17 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UMassCTF 2025 - Falling Blocks</title>
+      <link>http://localhost:1313/posts/umassctf2025/</link>
+      <pubDate>Sat, 17 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/umassctf2025/</guid>
+      <description>&lt;p&gt;This is my second time being an author and organizer for UMassCTF. Since this year&amp;rsquo;s theme was flash/io games, it was a great opportunity for me to incorporate web game elements. So I decided to create a web challenge using WebSockets themed on the &amp;ldquo;Falling Blocks&amp;rdquo; game where the player has to dodge the falling blocks and the longer you survive the higher score you&amp;rsquo;ll get. The vulnerability itself wasn&amp;rsquo;t hard to find and exploit, but I aimed to make it subtle and more real-life-like.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ImagineCTF 2024 - journal</title>
+      <link>http://localhost:1313/posts/imaginectf2024/</link>
+      <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/imaginectf2024/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;The initial set up of this challenge was allowing user to view different text files on the website. However, there existed a remote code execution vulnerability in the way that the web application was taking in the file path. Specifically, it used PHP&amp;rsquo;s &lt;code&gt;assert()&lt;/code&gt; function, which would evaluate a string as PHP code.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;When I first opened up the website and clicked on the different text files, I noticed that they were displayed using a url parameter &lt;code&gt;file&lt;/code&gt;. I then looked at the source code and found that the PHP file was using &lt;code&gt;$_GET&lt;/code&gt; to take in a url parameter.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>UMDCTF 2024 - Donations Part1</title>
+      <link>http://localhost:1313/posts/umdctf2024/d1/</link>
+      <pubDate>Sat, 21 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/umdctf2024/d1/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;This challenge has a parameter pollution vulnerability. In order to solve the challenge, I used &lt;code&gt;Burp Suite&lt;/code&gt; to intercept the web request and started from there.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;I first noticed that there is a login and a register page, so I made a new user and logged in as that user.&lt;/p&gt;&#xA;&lt;p&gt;The message on the web page tells us that it wants us to get the most donations, but it seems like only Jeff Bezos is the only one you can donate to.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>UMDCTF 2024 - Donations Part2</title>
+      <link>http://localhost:1313/posts/umdctf2024/d2/</link>
+      <pubDate>Sat, 21 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/umdctf2024/d2/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;The second part of &amp;ldquo;Donations&amp;rdquo; also has a parameter pollution vulnerability, so the approach is to exploit this vulnerability in the request.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;The first step was the same as part 1 of the challenge, where I registered a user and intercepted the request of making donations to &amp;ldquo;Jeff Bezos&amp;rdquo;. I tried sending a negative amount, which the response returned an error message.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;images/web2_1.png&#34; alt=&#34;web1_1&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;This was the key to finding the solution - the message told me that &amp;ldquo;only Amazon can steal your money&amp;rdquo;. So I had the idea of adding a &amp;ldquo;from&amp;rdquo; paramter to indicate the sender as &amp;ldquo;amazon&amp;rdquo;. Like part 1 of the challenge, I overrode the destination with an additional &amp;ldquo;to&amp;rdquo; directed to a user I created. As the image below shows, I was able to send &amp;ldquo;currency&amp;rdquo; from one user to another.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>BYUCTF 2024 - Random</title>
+      <link>http://localhost:1313/posts/byuctf2024/</link>
+      <pubDate>Thu, 15 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/byuctf2024/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;Overall this was a pretty fun challenge, I enjoyed it a lot. It came off as easy at first, but tricked me in a few places. This challenge can be broken down into two major stages: figure out how to get the same secret key to sign a session cookie and how to get the file &lt;code&gt;flag.txt&lt;/code&gt; from the &lt;code&gt;filename&lt;/code&gt; url parameter.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;When I first opened up the web page, I got a 403 error. So I inspected the source code provided and found that the server is checking for a key value pair&lt;code&gt;{userid: 0}&lt;/code&gt; in the session cookie.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>L3akCTF 2024 - I&#39;m the CEO</title>
+      <link>http://localhost:1313/posts/l3akctf2024/ceo/</link>
+      <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/l3akctf2024/ceo/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;This was an easy web challenge that involved a XSS(Cross-site scripting) attack. The set up was a web application that allowed users to register an account to log in and post notes. Additionally, there was an admin bot page in which the admin bot would visit the page url we gave it. Looking through the source code, I found that the flag was set as the cookie of the admin bot. So the goal was to craft a XSS attack to steal its cookie.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>L3akCTF 2024 - Simple Calculator</title>
+      <link>http://localhost:1313/posts/l3akctf2024/simple/</link>
+      <pubDate>Wed, 10 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/l3akctf2024/simple/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;The set up of this challenge was a simple calculator that allowed users to perform easy calculations, such as subtraction and multiplication, through the &lt;code&gt;formula&lt;/code&gt; url parameter. It had a command injection vulnerability that allowed attackers to inject arbitrary commands on the host system to extract sensitive information.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;There was nothing much interesting in the frontend of the web page, so I turned to the source code and found the vulnerability immediately. The web application was using &lt;code&gt;eval()&lt;/code&gt; to take in user input as a string and then executing it through &lt;code&gt;echo&lt;/code&gt;. Whenever &lt;code&gt;eval()&lt;/code&gt; is used in an application to take in an input it should always set off an alarm. There are numerous articles online explaining the danger of &lt;code&gt;eval()&lt;/code&gt;. In this case, even though the author used a seemingly secure way, regular expression, to sanitize the user input before passing it into &lt;code&gt;eval()&lt;/code&gt;, there were still ways to bypass the filter. Here is a screenshot of the source code:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>jellyCTF 2024 - aidoru</title>
+      <link>http://localhost:1313/posts/jellyctf/aidoru/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/jellyctf/aidoru/</guid>
+      <description>&lt;p&gt;Description of challenge:&#xA;There&amp;rsquo;s a hidden flag on Jelly&amp;rsquo;s page, but the creator hasn&amp;rsquo;t made her page public yet. Can you find a way to access her page and capture the flag?&lt;/p&gt;&#xA;&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;From the initial inspection, it seemed that the access to one of the Virtual Youtubers&amp;rsquo; page was restricted when clicking on her picture. However, there existed a broken access control vulnerability that allowed direct access to the web page by simply changing the url to an endpoint.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>jellyCTF 2024 - awafy_me</title>
+      <link>http://localhost:1313/posts/jellyctf/awafy/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/jellyctf/awafy/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;The setting of this web page was a custom name converter that converted a user input into &amp;ldquo;AWASCII&amp;rdquo;. Due to improper user input sanitization, a command injection vulnerability present in the application allowed execution of arbitrary command code.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;When I first opened up the web page, I noticed that there was a place for user input. I examined the source code &lt;code&gt;main.py&lt;/code&gt; and found that the flask application was using python&amp;rsquo;s subprocess module to start the python script &lt;code&gt;awafier.py&lt;/code&gt; that took the user input as an argument. After checking the documentation of the python module, it appeared that the library will not implicitly choose to call a system shell unless it&amp;rsquo;s invoked via &lt;code&gt;shell=True&lt;/code&gt;. In this challenge, this was invoked explicitly as shown in the screenshot of the source code.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>jellyCTF 2024 - bro_visited_his_site</title>
+      <link>http://localhost:1313/posts/jellyctf/bro/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/jellyctf/bro/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;This was a good beginner challenge that involved a Server-Side Template Injection vulnerability in the Flask application&amp;rsquo;s Jinja2 template engine. This vulnerability allowed access to read the contents of the applicatoin&amp;rsquo;s config object, which was where the flag for this challenge was located.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;When I first opened up the web page, I was presented with a form input. I tested the level of input sanitization with a mathematical expression in double curly braces:  &lt;code&gt;{{2*2}}&lt;/code&gt;, which prints the contents in between to the template output. To better see the response from the browser, I sent my request using &lt;code&gt;Burpsuite&lt;/code&gt; and got a positive indication of a Server-Side Template Injection vulnerability.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>jellyCTF 2024 - bro_visited_his_site_2</title>
+      <link>http://localhost:1313/posts/jellyctf/bro_2/</link>
+      <pubDate>Tue, 25 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/jellyctf/bro_2/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;&#xA;&lt;p&gt;This was the second part of the same application, which also involved the Server-Side Template Injection Vulnerability. However, this time the flag was in the file &lt;code&gt;flag.txt&lt;/code&gt; in the application directory, which can be accessed through remote code execution using the request object.&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;To achieve remote code execution, the goal was to import the &lt;code&gt;os&lt;/code&gt; module, which can be found in request&amp;rsquo;s &lt;code&gt;__builtins__&lt;/code&gt; method via the &lt;code&gt;__globals__&lt;/code&gt; attribute.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>UMassCTF 2024 - Holesome Birthday Party</title>
+      <link>http://localhost:1313/posts/umassctf2024/</link>
+      <pubDate>Mon, 15 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/umassctf2024/</guid>
+      <description>&lt;p&gt;This is my first time being a CTF author and organizer for UMassCTF. I decided to make a beginner challenge that teaches basic skills in web exploitation.&lt;/p&gt;&#xA;&lt;h2 id=&#34;challenge-description&#34;&gt;Challenge Description&lt;/h2&gt;&#xA;&lt;p&gt;You just got invited to Spongebob&amp;rsquo;s birthday! But he&amp;rsquo;s decided to test your friendship with a series of challenges before granting you with the ticket of entrance. Can you prove that you&amp;rsquo;re truly his friend and earn your entrance to this holesome birthday party?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
