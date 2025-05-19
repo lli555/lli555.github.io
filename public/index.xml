@@ -16,6 +16,13 @@
       <description>&lt;p&gt;This is my second time being an author and organizer for UMassCTF. Since this year&amp;rsquo;s theme was flash/io games, it was a great opportunity for me to incorporate web game elements. So I decided to create a web challenge using WebSockets themed on the &amp;ldquo;Falling Blocks&amp;rdquo; game where the player has to dodge the falling blocks and the longer you survive the higher score you&amp;rsquo;ll get. The vulnerability itself wasn&amp;rsquo;t hard to find and exploit, but I aimed to make it subtle and more real-life-like.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>HackTheBox Cascade Writeup</title>
+      <link>http://localhost:1313/posts/htb/</link>
+      <pubDate>Thu, 03 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/htb/</guid>
+      <description>&lt;p&gt;This is a medium box, but it felt hard to me. It was relatively fun to pwn.&lt;/p&gt;&#xA;&lt;h2 id=&#34;nmap&#34;&gt;nmap&lt;/h2&gt;&#xA;&lt;p&gt;Starting off with an &lt;code&gt;nmap&lt;/code&gt; scan, all the ports open are typical ports for a domain controller.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;images/cascade1.png&#34; alt=&#34;ad1&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;initial-recon&#34;&gt;Initial Recon&lt;/h2&gt;&#xA;&lt;p&gt;Anonymous &lt;code&gt;ldap&lt;/code&gt; bind is successful.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;images/cascade2.png&#34; alt=&#34;ad1&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Under user &lt;code&gt;r.thompson&lt;/code&gt;, there is a field that looks like a &lt;code&gt;base64&lt;/code&gt; encoded password string. Decoding it gives a cleartext password.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;images/cascade3.png&#34; alt=&#34;ad1&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;images/cascade4.png&#34; alt=&#34;ad1&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;However, running &lt;code&gt;netexec&lt;/code&gt; shows that user &lt;code&gt;r.thompson&lt;/code&gt; is not a member of the &lt;code&gt;Remote Management Users&lt;/code&gt; group.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>ImagineCTF 2024 - journal</title>
       <link>http://localhost:1313/posts/imaginectf2024/</link>
       <pubDate>Thu, 03 Oct 2024 00:00:00 +0000</pubDate>

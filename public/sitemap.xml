@@ -20,13 +20,22 @@
     <loc>http://localhost:1313/tags/web/</loc>
     <lastmod>2025-05-17T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/ad/</loc>
+    <lastmod>2025-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/htb/</loc>
+    <lastmod>2025-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/htb/</loc>
+    <lastmod>2025-04-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/writeups/</loc>
+    <lastmod>2025-04-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/imaginectf2024/</loc>
     <lastmod>2024-10-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/imaginectf2024/</loc>
-    <lastmod>2024-10-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/writeups/</loc>
     <lastmod>2024-10-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/umdctf2024/d1/</loc>

@@ -227,6 +227,10 @@
                 
                         
                 
+                        
+                
+                        
+                
             
         
         
@@ -251,6 +255,10 @@
                             </li>
                         
                             <li class="bullet">
+                                <a href="http://localhost:1313/posts/htb/">HackTheBox Cascade Writeup</a>
+                            </li>
+                        
+                            <li class="bullet">
                                 <a href="http://localhost:1313/posts/imaginectf2024/">ImagineCTF 2024 - journal</a>
                             </li>
                         
@@ -262,10 +270,6 @@
                                 <a href="http://localhost:1313/posts/umdctf2024/d2/">UMDCTF 2024 - Donations Part2</a>
                             </li>
                         
-                            <li class="bullet">
-                                <a href="http://localhost:1313/posts/byuctf2024/">BYUCTF 2024 - Random</a>
-                            </li>
-                        
                     
                 
             
@@ -274,6 +278,10 @@
                 
             
                 
+                
+                        
+                
+                        
                 
                         
                 
@@ -399,6 +407,74 @@ powered by <a target="_blank" href="https://gohugo.io">Hugo</a> | themed with <a
         
         <div class="read-more-link">
             <a href="/posts/umassctf2025/">Read More…</a>
+        </div>
+        
+        
+    </article>
+    <article class="post">
+        <div class="info">
+  <h1 class="post-title">
+    <a href="http://localhost:1313/posts/htb/">HackTheBox Cascade Writeup</a>
+  </h1>
+
+  <div class="headline">
+    <div>
+      
+      
+      <time datetime=" 2025-04-03T00:00:00Z" class="post-date">
+        April 3, 2025
+      </time>
+      
+      <span> - </span>
+      <span class="reading-time">
+        
+          
+        
+
+        <span>2 mins read</span>
+      </span>
+    </div>
+
+    
+    <ul class="tags">
+      
+      <li class="tag-writeups">
+        <a href="http://localhost:1313/tags/writeups">writeups</a>
+      </li>
+      
+      <li class="tag-HTB">
+        <a href="http://localhost:1313/tags/htb">HTB</a>
+      </li>
+      
+      <li class="tag-AD">
+        <a href="http://localhost:1313/tags/ad">AD</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  
+  
+
+  
+</div>
+
+        
+        <p>This is a medium box, but it felt hard to me. It was relatively fun to pwn.</p>
+<h2 id="nmap">nmap</h2>
+<p>Starting off with an <code>nmap</code> scan, all the ports open are typical ports for a domain controller.</p>
+<p><img src="images/cascade1.png" alt="ad1"></p>
+<h2 id="initial-recon">Initial Recon</h2>
+<p>Anonymous <code>ldap</code> bind is successful.</p>
+<p><img src="images/cascade2.png" alt="ad1"></p>
+<p>Under user <code>r.thompson</code>, there is a field that looks like a <code>base64</code> encoded password string. Decoding it gives a cleartext password.</p>
+<p><img src="images/cascade3.png" alt="ad1"></p>
+<p><img src="images/cascade4.png" alt="ad1"></p>
+<p>However, running <code>netexec</code> shows that user <code>r.thompson</code> is not a member of the <code>Remote Management Users</code> group.</p>
+        
+        <div class="read-more-link">
+            <a href="/posts/htb/">Read More…</a>
         </div>
         
         
@@ -888,67 +964,6 @@ There&rsquo;s a hidden flag on Jelly&rsquo;s page, but the creator hasn&rsquo;t 
         
         <div class="read-more-link">
             <a href="/posts/jellyctf/awafy/">Read More…</a>
-        </div>
-        
-        
-    </article>
-    <article class="post">
-        <div class="info">
-  <h1 class="post-title">
-    <a href="http://localhost:1313/posts/jellyctf/bro/">jellyCTF 2024 - bro_visited_his_site</a>
-  </h1>
-
-  <div class="headline">
-    <div>
-      
-      
-      <time datetime=" 2024-06-25T00:00:00Z" class="post-date">
-        June 25, 2024
-      </time>
-      
-      <span> - </span>
-      <span class="reading-time">
-        
-          
-        
-
-        <span>2 mins read</span>
-      </span>
-    </div>
-
-    
-    <ul class="tags">
-      
-      <li class="tag-writeups">
-        <a href="http://localhost:1313/tags/writeups">writeups</a>
-      </li>
-      
-      <li class="tag-web">
-        <a href="http://localhost:1313/tags/web">web</a>
-      </li>
-      
-      <li class="tag-jellyCTF2024">
-        <a href="http://localhost:1313/tags/jellyctf2024">jellyCTF2024</a>
-      </li>
-      
-    </ul>
-    
-  </div>
-
-  
-  
-
-  
-</div>
-
-        
-        <h2 id="overview">Overview</h2>
-<p>This was a good beginner challenge that involved a Server-Side Template Injection vulnerability in the Flask application&rsquo;s Jinja2 template engine. This vulnerability allowed access to read the contents of the applicatoin&rsquo;s config object, which was where the flag for this challenge was located.</p>
-<h2 id="approach">Approach</h2>
-<p>When I first opened up the web page, I was presented with a form input. I tested the level of input sanitization with a mathematical expression in double curly braces:  <code>{{2*2}}</code>, which prints the contents in between to the template output. To better see the response from the browser, I sent my request using <code>Burpsuite</code> and got a positive indication of a Server-Side Template Injection vulnerability.</p>
-        
-        <div class="read-more-link">
-            <a href="/posts/jellyctf/bro/">Read More…</a>
         </div>
         
         
