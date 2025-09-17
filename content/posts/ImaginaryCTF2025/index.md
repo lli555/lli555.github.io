@@ -13,7 +13,7 @@ The initial set up of this challenge is that there is "no way" to obtain the ini
 
 ## Approach
 
-Source was given, and the first thing I looked into was how the initial password was generated in `index.js`. This is the code that is run when registering withg an email:
+Source was given, and the first thing I looked into was how the initial password was generated in `index.js`. This is the code that is run when registering with an email:
 
 ```javascript
 app.post('/user', limiter, (req, res, next) => {
@@ -49,12 +49,13 @@ app.post('/user', limiter, (req, res, next) => {
 })
 ```
 
-The first thing I noticed was that even though it normalizes the email field it still uses the email provided by the user directly from `req.body.email`. However, this shouldn't be guessable since it contains randomly generated strings with `crypto.randomBytes(16)`. The problem is that it uses `bcrypt` to hash the password. Credit to a mysterious friend, I found out that `bcrypt` truncates the input if it's more than 72 bytes long. It's noted in the documentation in "Security Issues And Concerns" as well:
+The first thing I noticed was that even though it normalizes the email field it still uses the email provided by the user directly from `req.body.email`. However, this shouldn't be guessable since it contains randomly generated strings using `crypto.randomBytes(16)`. The problem is that it uses `bcrypt` to hash the password. Credited to a mysterious friend, I found out that `bcrypt` truncates the input if it's more than 72 bytes long. It's also noted in the documentation under "Security Issues And Concerns":
 
 "Per bcrypt implementation, only the first 72 bytes of a string are used. Any extra bytes are ignored when matching passwords. Note that this is not the first 72 _characters_. It is possible for a string to contain less than 72 characters, while taking up more than 72 bytes (e.g. a UTF-8 encoded string containing emojis)."
+
 [https://www.npmjs.com/package/bcrypt](https://www.npmjs.com/package/bcrypt)
 
-Then an idea came to my mind: what happens if I make the email field more than 72 bytes long, then will the password just bee truncated to the first 72 bytes which is user-controllable? However, it seems like there is a check that restricts it to 64 characters:
+Then an idea came to my mind: what happens if I make the email field more than 72 bytes long, then will the password just be truncated to the first 72 bytes which is user-controllable? However, it seems like there is a check that restricts the email length to 64 characters long:
 
 ```javascript
 if (nEmail.length > 64) {
@@ -75,11 +76,13 @@ normalizeEmail('johnotander+foobar@gmail.com')  // => 'johnotander@gmail.com
 normalizeEmail('JOHN.OTANDER+OHAI@gmail.com')   // => 'johnotander@gmail.com'
 ```
 
-This is the perfect solution for the bypass! It simply already exists there for us to abuse.
+[https://www.npmjs.com/package/normalize-email](https://www.npmjs.com/package/normalize-email)
+
+This is the perfect solution for the bypass! It simply already exists there for us to use it.
 
 ## Solution
 
-Now, we can chain together the thoughts to bypass authentication.
+Now, we can chain together the threads to bypass authentication.
 
 First, I registered with an email field longer than 72 bytes using the plus symbol example from `normalizeEmail`. This is the email I used: `lithiumsodium+ahhhhhhhhhahhhhhhhhhahhhhhhhhhahhhhhhhhhahhhhhhhhhahhhhhhhhhahhhhhhhhh@gmail.com`
 
@@ -92,6 +95,7 @@ Then, the username will be normalized to `lithiumsodium@gmail.com`, and I could 
 
 ![web1_3](images/1_3.png)
 
+Guess passwordless wasn't actually that passwordless.
 
 
 
