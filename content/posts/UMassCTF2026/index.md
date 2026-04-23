@@ -8,7 +8,7 @@ tags:
 
 This is my third time being an author and organizer for UMassCTF. I decided to create a web challenge simulating a market where users can upload their building blocks (to avoid using lego branding) for sale. However, they need to first get the "admin" to approve their requests for before they can be listed. The attack chain I created was to perform a web cache deception via CRLF path delimiters to obtain the CSRF token of the admin bot, and then use CSRF to get the admin bot to approve a listing request to get the flag.
 
-## Description:
+## Description
 
 I have this ultra rare Star Wars set that I want to sell, but the admin of the site thinks it's fake! Can you help me figure out a way?
 
