@@ -254,4 +254,4 @@ impacket-smbexec -k -no-pass web01.pirate.htb
 
 ![ad1](images/pirate30.png)
 
-Finally the end! It's my longest writeup yet... if you looked through everything in this blog you've earned my respect :\)
+Finally the end! It's my longest writeup yet... if you looked through everything in this blog you've earned my respect :3
