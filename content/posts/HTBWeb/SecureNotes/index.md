@@ -1,5 +1,5 @@
 ---
-title: "HackTheBox Secure Notes Writeup"
+title: "HackTheBox Web Secure Notes Writeup"
 date: "2026-09-13"
 tags:
 - writeups 
