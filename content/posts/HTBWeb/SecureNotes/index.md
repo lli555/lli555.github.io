@@ -40,6 +40,7 @@ This CVE is a prototype pollution vulnerability in `document.js`, via update fun
 However, prototype pollution by itself is not exploitable. In this case, we need to find a gadget to achieve what we want. Since the check happens in `req.connection.remoteAddress`, what if there's a way to pollute it so that we can arbitrarily "force set" our remoteAddress to 127.0.0.1? So I turned to look at how the code works underneath.
 `req.connection.remoteAddress` originates from the underlying Node.js `http.incomingMessage` class. In `lib/net.js`, we can find the getter for remoteAddress:
 
+[Code Reference](https://github.com/nodejs/node/blob/6193e15483395080c6438399211aa7fab70f4e5e/lib/net.js#L1250)
 ```js
 protoGetter('remoteAddress', function remoteAddress() {
   return this._getpeername().address;
@@ -48,6 +49,7 @@ protoGetter('remoteAddress', function remoteAddress() {
 
 This references the address field from function `_getpeername()`. In the same file we can find the function:
 
+[Code Reference](https://github.com/nodejs/node/blob/6193e15483395080c6438399211aa7fab70f4e5e/lib/net.js#L1225)
 ```js
 Socket.prototype._getpeername = function() {
   if (!this._handle || !this._handle.getpeername || this.connecting) {
