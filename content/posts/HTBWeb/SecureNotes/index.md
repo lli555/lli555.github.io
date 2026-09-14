@@ -13,7 +13,7 @@ This was a pretty fun challenge. I've always known about prototype pollution, bu
 
 This simple Express.js app allows creating, deleting, and updating notes. When first examining the source code, I noticed that it's using [Mongoose](https://mongoosejs.com/), a MongoDB object modeling tool. Instinctively, I checked the `package.json` and found that the mongoose version is 7.2.4. So I searched up for known vulnerabilities and identified [CVE-2023-3696](https://nvd.nist.gov/vuln/detail/cve-2023-3696). Now, what's our goal? There is a straight-forward endpoint `/flag` that checks if request "comes from the internal server" by validating `req.connection.remoteAddress`:
 
-```node
+```js
 app.get('/flag', (req, res) => {
 
 const remoteAddress = req.connection.remoteAddress;

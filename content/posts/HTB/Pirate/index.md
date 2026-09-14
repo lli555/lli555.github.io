@@ -7,7 +7,7 @@ tags:
 - AD
 ---
 
-This is a Windows hard box. I liked it a lot, and I learned a lot of valuable techniques from it.
+This is a Windows hard box. I liked it a lot, and I learned a lot of valuable techniques from it. Note: This is a very long writeup, but I hope you'd stick with me!
 
 ## nmap
 Starting off with an `nmap` scan, all the ports open are typical ports for a domain controller.
@@ -253,3 +253,5 @@ impacket-smbexec -k -no-pass web01.pirate.htb
 ```
 
 ![ad1](images/pirate30.png)
+
+Finally the end! It's my longest writeup yet... if you looked through everything in this blog you've earned my respect :\)
